@@ -1,0 +1,17 @@
+{
+    "$schema": "../../../system/schema/extend.json",
+    "name": "Article Comment Expire",
+    "description": "Comments will be closed automatically after an adjustable number of days from the publication of articles.",
+    "version": "1.0.0",
+    "api": "^8.0",
+    "url": "https://jdanek.eu",
+    "class": "ArtCommentExpirePlugin",
+    "langs": {
+        "artcommentexpire": "Resources/languages/"
+    },
+    "events": [
+        {"event": "article.before", "method": "onDisable"},
+        {"event": "article.comments.before", "method": "onMessage"},
+        {"event": "posts.submit", "method": "onSubmit"}
+    ]
+}
