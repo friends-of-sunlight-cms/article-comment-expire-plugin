@@ -3,7 +3,9 @@
     "name": "Article Comment Expire",
     "description": "Comments will be closed automatically after an adjustable number of days from the publication of articles.",
     "version": "1.0.0",
-    "api": "^8.0",
+    "environment": {
+        "system": "^8.0"
+    },
     "url": "https://jdanek.eu",
     "class": "ArtCommentExpirePlugin",
     "langs": {
