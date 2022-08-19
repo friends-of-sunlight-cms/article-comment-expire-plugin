@@ -8,7 +8,6 @@ It automatically locks comments after an adjustable number of days from the publ
 Requirements
 ************
 
-- PHP 7.1+
 - SunLight CMS 8
 
 Installation
