@@ -9,7 +9,7 @@
     "url": "https://github.com/friends-of-sunlight-cms/",
     "class": "ArtCommentExpirePlugin",
     "langs": {
-        "artcommentexpire": "Resources/languages/"
+        "artcommentexpire": "resources/languages/"
     },
     "events": [
         {"event": "article.before", "method": "onDisable"},
