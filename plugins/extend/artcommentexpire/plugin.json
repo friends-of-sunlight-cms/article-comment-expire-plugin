@@ -2,7 +2,7 @@
     "$schema": "../../../system/schema/extend.json",
     "name": "Article Comment Expire",
     "description": "Comments will be closed automatically after an adjustable number of days from the publication of articles.",
-    "version": "1.0.0",
+    "version": "0.9.0",
     "environment": {
         "system": "^8.0"
     },
