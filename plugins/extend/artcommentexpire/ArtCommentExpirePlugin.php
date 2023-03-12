@@ -10,12 +10,8 @@ use Sunlight\Post\Post;
 
 class ArtCommentExpirePlugin extends ExtendPlugin
 {
-
-
     /**
      * Callback to deactivate a comment
-     *
-     * @param array $args
      */
     public function onDisable(array $args): void
     {
@@ -32,8 +28,6 @@ class ArtCommentExpirePlugin extends ExtendPlugin
 
     /**
      * Callback to display message
-     *
-     * @param array $args
      */
     public function onMessage(array $args): void
     {
@@ -45,8 +39,6 @@ class ArtCommentExpirePlugin extends ExtendPlugin
 
     /**
      * Callback to avoid saving the post
-     *
-     * @param array $args
      */
     public function onSubmit(array $args): void
     {
