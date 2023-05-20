@@ -72,7 +72,7 @@ class ArtCommentExpirePlugin extends ExtendPlugin
     public function getAction(string $name): ?PluginAction
     {
         if ($name === 'config') {
-            return new Configuration($this);
+            return new ConfigAction($this);
         }
         return parent::getAction($name);
     }

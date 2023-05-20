@@ -2,10 +2,10 @@
 
 namespace SunlightExtend\Artcommentexpire;
 
-use Sunlight\Plugin\Action\ConfigAction;
+use Sunlight\Plugin\Action\ConfigAction as BaseConfigAction;
 use Sunlight\Util\ConfigurationFile;
 
-class Configuration extends ConfigAction
+class ConfigAction extends BaseConfigAction
 {
     private const ONE_DAY = 86400;
 
