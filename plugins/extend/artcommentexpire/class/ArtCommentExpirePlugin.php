@@ -55,25 +55,4 @@ class ArtCommentExpirePlugin extends ExtendPlugin
             }
         }
     }
-
-    /**
-     * ============================================================================
-     *  EXTEND CONFIGURATION
-     * ============================================================================
-     */
-
-    protected function getConfigDefaults(): array
-    {
-        return [
-            'expire' => 604800
-        ];
-    }
-
-    public function getAction(string $name): ?PluginAction
-    {
-        if ($name === 'config') {
-            return new ConfigAction($this);
-        }
-        return parent::getAction($name);
-    }
 }

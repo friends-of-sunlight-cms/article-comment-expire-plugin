@@ -2,7 +2,7 @@
     "$schema": "../../../system/schema/extend.json",
     "name": "Article Comment Expire",
     "description": "Comments will be closed automatically after an adjustable number of days from the publication of articles.",
-    "version": "0.9.1",
+    "version": "0.9.2",
     "environment": {
         "system": "^8.0"
     },
@@ -10,6 +10,12 @@
         {"name": "Friends of Sunlight CMS", "url": "https://github.com/friends-of-sunlight-cms/"}
     ],
     "class": "ArtCommentExpirePlugin",
+    "config_defaults": {
+        "expire": 604800
+    },
+    "actions": {
+        "config": "ConfigAction"
+    },
     "langs": {
         "artcommentexpire": "lang"
     },
