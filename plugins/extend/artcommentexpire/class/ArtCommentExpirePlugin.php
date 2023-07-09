@@ -4,7 +4,6 @@ namespace SunlightExtend\Artcommentexpire;
 
 use Sunlight\Database\Database as DB;
 use Sunlight\Message;
-use Sunlight\Plugin\Action\PluginAction;
 use Sunlight\Plugin\ExtendPlugin;
 use Sunlight\Post\Post;
 

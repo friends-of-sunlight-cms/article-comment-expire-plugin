@@ -2,6 +2,7 @@
 
 namespace SunlightExtend\Artcommentexpire;
 
+use Fosc\Feature\Plugin\Config\FieldGenerator;
 use Sunlight\Plugin\Action\ConfigAction as BaseConfigAction;
 use Sunlight\Util\ConfigurationFile;
 
@@ -12,19 +13,21 @@ class ConfigAction extends BaseConfigAction
     protected function getFields(): array
     {
         $config = $this->plugin->getConfig();
+        $langPrefix = "%p:artcommentexpire.config";
 
-        return [
-            'expire' => [
-                'label' => _lang('artcommentexpire.config.expire'),
-                'input' => '<input type="number" name="config[expire]" min="1" value="' . intval($config->offsetGet('expire') / self::ONE_DAY) . '" class="inputmini">',
-            ]
-        ];
+        $gen = new FieldGenerator($this->plugin);
+        $gen->generateField('expire', $langPrefix, '%number', [
+            'class' => 'inputsmall',
+            'value' => round($config['expire'] / self::ONE_DAY)
+        ], null);
+
+        return $gen->getFields();
     }
 
     protected function mapSubmittedValue(ConfigurationFile $config, string $key, array $field, $value): ?string
     {
         if ($key === 'expire') {
-            $value = ($value < 1 ? 1 : $value);
+            $value = (max($value, 1));
             $config[$key] = ((int)$value * self::ONE_DAY);
             return null;
         }
