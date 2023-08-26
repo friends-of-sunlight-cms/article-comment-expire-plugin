@@ -2,17 +2,17 @@
     "$schema": "../../../system/schema/extend.json",
     "name": "Article Comment Expire",
     "description": "Comments will be closed automatically after an adjustable number of days from the publication of articles.",
-    "version": "0.9.2",
+    "authors": [
+        {"name": "Friends of Sunlight CMS", "url": "https://github.com/friends-of-sunlight-cms/"},
+        {"url": "https://sunlight-cms.cz/"}
+    ],
+    "version": "1.0.0",
     "environment": {
         "system": "^8.0"
     },
     "dependencies": {
-        "fosc-lib": ">=0.9.2"
+        "fosc-lib": ">=1.0.0"
     },
-    "authors": [
-        {"name": "Friends of Sunlight CMS", "url": "https://github.com/friends-of-sunlight-cms/"}
-    ],
-    "class": "ArtCommentExpirePlugin",
     "config_defaults": {
         "expire": 604800
     },
@@ -23,8 +23,8 @@
         "artcommentexpire": "lang"
     },
     "events": [
-        {"event": "article.before", "method": "onDisable"},
-        {"event": "article.comments.before", "method": "onMessage"},
-        {"event": "posts.submit", "method": "onSubmit"}
+        {"event": "article.before", "script": "event/article_before.php"},
+        {"event": "article.comments.before", "script": "event/article_comments_before.php"},
+        {"event": "posts.submit", "script": "event/posts_submit.php"}
     ]
 }
