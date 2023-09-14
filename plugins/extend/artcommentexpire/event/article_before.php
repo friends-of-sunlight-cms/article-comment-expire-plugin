@@ -2,7 +2,9 @@
 
 return function (array $args) {
     // do nothing if the comments are already deactivated or locked
-    if ($args['article']['comments'] == 0 || $args['article']['commentslocked'] == 1) return;
+    if ($args['article']['comments'] == 0 || $args['article']['commentslocked'] == 1) {
+        return;
+    }
 
     // find out if comments need to be locked
     if ($args['article']['time'] + $this->getConfig()['expire'] < time()) {
