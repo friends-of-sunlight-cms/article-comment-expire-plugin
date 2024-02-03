@@ -5,6 +5,7 @@ namespace SunlightExtend\Artcommentexpire;
 use Sunlight\Plugin\Action\ConfigAction as BaseConfigAction;
 use Sunlight\Util\ConfigurationFile;
 use Sunlight\Util\Form;
+use Sunlight\Util\Request;
 
 class ConfigAction extends BaseConfigAction
 {
@@ -14,7 +15,7 @@ class ConfigAction extends BaseConfigAction
     {
         $config = $this->plugin->getConfig();
 
-        $expire = round(Form::restorePostValue('expire', $config['expire'], false) / self::ONE_DAY);
+        $expire = round(Request::post('expire', $config['expire']) / self::ONE_DAY);
         return [
             'expire' => [
                 'label' => _lang('artcommentexpire.config.expire'),
