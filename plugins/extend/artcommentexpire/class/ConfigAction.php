@@ -19,7 +19,7 @@ class ConfigAction extends BaseConfigAction
         return [
             'expire' => [
                 'label' => _lang('artcommentexpire.config.expire'),
-                'input' => '<input type="number" name="config[expire]" min="1" value="' . $expire . '" class="inputsmall">',
+                'input' => Form::input('number', 'config[expire]', $expire, ['min' => 1, 'class' => 'inputsmall']),
             ],
         ];
     }
